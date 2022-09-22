@@ -59,7 +59,7 @@ def bf_order(tree):
         nodes.append(tree.val)
     sub = [tree.left, tree.right]
     for subtree in sub:
-        if subtree != None and subtree.val not in nodes:
+        if subtree != None:
             nodes.append(subtree.val)
             sub.append(subtree.left)
             sub.append(subtree.right)
@@ -67,5 +67,4 @@ def bf_order(tree):
     return nodes
 
 ####################################
-
 
