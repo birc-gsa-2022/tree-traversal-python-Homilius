@@ -23,26 +23,6 @@ def count_nodes(tree):
         return 1 + count_nodes(tree.left) + count_nodes(tree.right)  
 
 
-def visit(tree, node):
-    ''' Visits specified node
-    
-    Example:
-    tree = T(2, T(1, None, None), T(4, T(3, None, None), T(5, None, None)))
-    visit(tree, 4)
-    T(val=4, left=T(val=3, left=None, right=None), right=T(val=5, left=None, right=None))
-    
-    '''
-    if tree == None:
-        return None
-    if tree.val == node:
-        return tree
-    for subtree in [tree.left,tree.right]:
-        if subtree != None:
-            if subtree.val == node:
-                return subtree
-            visit(subtree, node)
-
-
 def bf_order(tree):
     """Breadth-first traversal of a tree.
     
